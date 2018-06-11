@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
+
+//components
 import Navbar from './components/navbar/navbar';
+import Form from './components/form/forms'
+//api
 import {task} from './db.json'
 console.log(task)
 
@@ -32,6 +36,9 @@ class App extends Component {
           <Navbar/>
         </header>
         <div className="container">
+          <div className="row justify-content-center">
+            <Form/>
+          </div>
           <div className="row justify-content-center">
             {tareas}
           </div>
