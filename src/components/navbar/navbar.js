@@ -19,24 +19,22 @@ class Navbarr extends Component {
   render() {
     return (
       <div>
-        <section color="light">
+        <Navbar color="light" light expand="md">
           <div className="container">
-            <Navbar color="light" light expand="md">
-              <NavbarBrand href="/">Priorize</NavbarBrand>
-              <NavbarToggler onClick={this.toggle} />
-              <Collapse isOpen={this.state.isOpen} navbar>
-                <Nav className="ml-auto" navbar>
-                  <NavItem>
-                    <NavLink href="/home/">Home</NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink href="https://github.com/makinox">GitHub</NavLink>
-                  </NavItem>
-                </Nav>
-              </Collapse>
-            </Navbar>
+            <NavbarBrand href="/">Priorize</NavbarBrand>
+            <NavbarToggler onClick={this.toggle} />
+            <Collapse isOpen={this.state.isOpen} navbar>
+              <Nav className="ml-auto" navbar>
+                <NavItem>
+                  <NavLink href="/home/">Home</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="https://github.com/makinox">GitHub</NavLink>
+                </NavItem>
+              </Nav>
+            </Collapse>
           </div>
-        </section>
+        </Navbar>
       </div>
     )
   }

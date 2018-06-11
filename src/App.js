@@ -2,21 +2,40 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/navbar/navbar';
+import {task} from './db.json'
+console.log(task)
 
 class App extends Component {
+  constructor () {
+    super();
+    this.state = {
+      task: task
+    }
+  }
+
   render() {
+    const tareas = this.state.task.map((tarea, i) => {
+      return (
+        <div className="card ml-3 mt-3 text-center">
+          <h4 className="card-header">{tarea.title}</h4>
+          <div className="card-body">
+            <h5 className="card-title">{tarea.reponsible}</h5>
+            <h6 className="card-text">{tarea.description}</h6>
+            <span className="badge badge-pill badge-danger p-1">{tarea.priority}</span>
+          </div>
+        </div>
+      )
+    })
     return (
-      // <div className="App">
-      //   <header className="App-header">
-      //     <img src={logo} className="App-logo" alt="logo" />
-      //     <h1 className="App-title">Bienvenido a React</h1>
-      //   </header>
-      //   <p className="App-intro">
-      //     To get started, edit <code>src/App.js</code> and save to reload.
-      //   </p>
-      // </div>
       <div>
-        <Navbar/>
+        <header>
+          <Navbar/>
+        </header>
+        <div className="container">
+          <div className="row justify-content-center">
+            {tareas}
+          </div>
+        </div>
       </div>
     );
   }
