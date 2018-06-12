@@ -59,7 +59,7 @@ class App extends Component {
     return (
       <div>
         <header>
-          <Navbar/>
+          <Navbar counter={this.state.task.length}/>
         </header>
         <div className="container">
           <div className="row justify-content-center">

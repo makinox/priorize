@@ -22,6 +22,7 @@ class Navbarr extends Component {
         <Navbar color="light" light expand="md">
           <div className="container">
             <NavbarBrand href="/">Priorize</NavbarBrand>
+            <span className="badge badge-danger">{this.props.counter}</span>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
