@@ -24,15 +24,34 @@ class App extends Component {
     })
   }
 
+  deleteTask(taskit) {
+    if (window.confirm('Estas seguro de borrar?')) {
+      this.setState({
+        task: this.state.task.filter((elemento, indice) => {
+          return indice !== taskit
+        })
+      })
+    }
+  }
+
   render() {
     const tareas = this.state.task.map((tarea, i) => {
       return (
-        <div className="card ml-3 mt-3 text-center" key={i}>
-          <h4 className="card-header">{tarea.title}</h4>
-          <div className="card-body">
-            <h5 className="card-title">{tarea.reponsible}</h5>
-            <h6 className="card-text">{tarea.description}</h6>
-            <span className="badge badge-pill badge-danger p-1">{tarea.priority}</span>
+        <div className="col-md-3" key={i}>
+          <div className="card ml-3 mt-3 text-center" >
+            <div className="card-header">
+              <h4 className="card-title">{tarea.title}</h4>
+              <span className="badge badge-pill badge-danger p-1">{tarea.priority}</span>
+            </div>
+            <div className="card-body">
+              <h5 className="card-title">{tarea.reponsible}</h5>
+              <h6 className="card-text">{tarea.description}</h6>
+            </div>
+            <div className="card-footer">
+              <button className="btn btn-danger" onClick={this.deleteTask.bind(this, i)}>
+                Borrar
+              </button>
+            </div>
           </div>
         </div>
       )
