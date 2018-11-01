@@ -39,11 +39,11 @@ class App extends Component {
   addColorToTaskTag = (tag) => {
     switch (tag) {
       case 'low':
-        return <span class="badge badge-pill badge-success p-2">{tag}</span>
+        return <span className="badge badge-pill badge-success p-2">{tag}</span>
       case 'medium':
-        return <span class="badge badge-pill badge-warning p-2">{tag}</span>
+        return <span className="badge badge-pill badge-warning p-2">{tag}</span>
       case 'high':
-        return <span class="badge badge-pill badge-danger p-2">{tag}</span>
+        return <span className="badge badge-pill badge-danger p-2">{tag}</span>
       default:
         return tag
     }
