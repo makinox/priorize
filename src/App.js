@@ -40,13 +40,10 @@ class App extends Component {
     switch (tag) {
       case 'low':
         return <span class="badge badge-pill badge-success p-2">{tag}</span>
-        break;
       case 'medium':
         return <span class="badge badge-pill badge-warning p-2">{tag}</span>
-        break;
       case 'high':
         return <span class="badge badge-pill badge-danger p-2">{tag}</span>
-        break;
       default:
         return tag
     }
