@@ -1,44 +1,14 @@
 import React, { Component } from 'react'
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import NavbarLayout from './navbarLayout'
 
 class Navbarr extends Component {
-  constructor(props) {
-    super(props);
-
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      isOpen: false
-    };
-  }
-  toggle() {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
+  state = {
+    isOpen: false
   }
 
-  render() {
-    return (
-      <div>
-        <Navbar color="light" light expand="md">
-          <div className="container">
-            <NavbarBrand href="/">Priorize</NavbarBrand>
-            <span className="badge badge-danger">{this.props.counter}</span>
-            <NavbarToggler onClick={this.toggle} />
-            <Collapse isOpen={this.state.isOpen} navbar>
-              <Nav className="ml-auto" navbar>
-                <NavItem>
-                  <NavLink href="/home/">Home</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="https://github.com/makinox">GitHub</NavLink>
-                </NavItem>
-              </Nav>
-            </Collapse>
-          </div>
-        </Navbar>
-      </div>
-    )
-  }
+  toggle = () => this.setState({isOpen: !this.state.isOpen})
+
+  render() {return <NavbarLayout counter={this.props.counter} toggle={this.toggle} isOpen={this.state.isOpen}/>}
 }
 
-export default Navbarr;
+export default Navbarr
