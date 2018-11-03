@@ -75,9 +75,7 @@ class App extends Component {
     const { task } = this.state
     return (
       <div>
-        <header>
-          <Navbar counter={this.state.task.length}/>
-        </header>
+        <Navbar counter={this.state.task.length}/>
         <div className="container">
           <div className="row justify-content-center">
             <Formz onCustomOne={this.addTask} />

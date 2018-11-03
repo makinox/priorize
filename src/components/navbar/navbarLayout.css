@@ -1,0 +1,32 @@
+header {
+  display: grid;
+  grid-auto-columns: minmax(auto, 1000px);
+  justify-content: center;
+}
+
+header nav {
+  display: grid;
+  grid-template-columns: minmax(auto, 800px) repeat(2, minmax(auto, .3fr));
+  padding: 10px 0;
+  grid-gap: 0 10px;
+}
+
+header nav a {
+  display: inline;
+  color: rgba(0,0,0, .6);
+  transition: 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+header nav a:hover {
+  color: rgb(0,0,0);
+  text-decoration: none;
+}
+
+header nav span {
+  color: #fff;
+  background-color: #dc3545;
+  padding: 0px 6px;
+  border-radius: 3px;
+}
