@@ -1,19 +1,15 @@
-import React, { Component } from 'react';
-// import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
 
-//components
-import Navbar from './components/navbar/navbar';
+import Navbar from './components/navbar/navbar'
 import Form from './components/form/forms'
-//api
+import Task from './components/task/task'
 import {task} from './db.json'
 
 class App extends Component {
-  constructor () {
-    super();
-    this.state = {
-      task: []
-    }
+  
+  state = {
+    task: []
   }
 
   componentDidMount(){
@@ -36,55 +32,15 @@ class App extends Component {
     }
   }
 
-  addColorToTaskTag = (tag) => {
-    switch (tag) {
-      case 'low':
-        return <span className="badge badge-pill badge-success p-2">{tag}</span>
-      case 'medium':
-        return <span className="badge badge-pill badge-warning p-2">{tag}</span>
-      case 'high':
-        return <span className="badge badge-pill badge-danger p-2">{tag}</span>
-      default:
-        return tag
-    }
-  }
-
-  renderTasks = (tasks) => (
-    tasks.map((tarea, i) => (
-      <div className="col-md-3" key={i}>
-          <div className="card ml-3 mt-3 text-center" >
-            <div className="card-header">
-              <h4 className="card-title">{tarea.title}</h4>
-              {this.addColorToTaskTag(tarea.priority)}
-            </div>
-            <div className="card-body">
-              <h5 className="card-title">{tarea.reponsible}</h5>
-              <h6 className="card-text">{tarea.description}</h6>
-            </div>
-            <div className="card-footer">
-              <button className="btn btn-danger" onClick={() => this.deleteTask(i) }>
-                Borrar
-              </button>
-            </div>
-          </div>
-        </div>
-    ))
-  )
-
   render() {
-    const { task } = this.state
     return (
       <>
         <Navbar counter={this.state.task.length}/>
         <Form onCustomOne={this.addTask} />
-        <div className="container">
-          <div className="row justify-content-center">
-            { this.renderTasks(task) }
-          </div>
-        </div>
+        <Task task={this.state.task} deleteTask={this.deleteTask} />
       </>
-    );
+    )
   }
 }
 
-export default App;
+export default App
