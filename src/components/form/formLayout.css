@@ -14,17 +14,18 @@
 }
 
 .formLayout-body select, .formLayout-body input {
-  width: 100%;
   padding: .375rem .75rem;
   color: #495057;
   background-color: #fff;
   border: 1px solid #ced4da;
   border-radius: .25rem;
   margin: 6px 0;
-  /* font-size: 1rem;
-  line-height: 1.5; */
-  /* background-clip: padding-box; */
-  /* transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out; */
+  line-height: 1.5;
+  background-clip: padding-box;
+}
+
+.formLayout-body select {
+  width: 100%;
 }
 
 .formLayout-body button {

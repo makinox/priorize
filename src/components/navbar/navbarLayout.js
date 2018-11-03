@@ -5,13 +5,13 @@ export default (props) => (
   <header>
     <nav>
       <div>
-        <a href='/'>Priorize <span>{props.counter}</span></a>
+        <a href='/' style={{fontSize: '20px'}}>Priorize <span style={{fontSize: '15px'}}>{props.counter}</span></a>
       </div>
       <div>
-        <a href='/login'>Home</a>
+        <a target="_blank" rel="noopener noreferrer" href='http://jesusbossa.com'>Me</a>
       </div>
       <div>
-        <a href='/login'>GitHub</a>
+        <a target="_blank" rel="noopener noreferrer" href='https://github.com/makinox'>GitHub</a>
       </div>
     </nav>
   </header>

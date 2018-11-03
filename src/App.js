@@ -1,12 +1,11 @@
-import React, { Component } from 'react'
-import './App.css'
+import React from 'react'
 
 import Navbar from './components/navbar/navbar'
 import Form from './components/form/forms'
 import Task from './components/task/task'
 import {task} from './db.json'
 
-class App extends Component {
+export default class extends React.Component {
   
   state = {
     task: []
@@ -42,5 +41,3 @@ class App extends Component {
     )
   }
 }
-
-export default App

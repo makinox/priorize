@@ -6,23 +6,15 @@ export default class extends React.Component {
   addColorToTaskTag = (tag) => {
     switch (tag) {
       case 'low':
-        return <span className="badge badge-pill badge-success p-2">{tag}</span>
+        return <span style={{backgroundColor: '#28A745', padding: '5px', fontSize: '13px', color: '#fff', borderRadius: '10px'}}>{tag}</span>
       case 'medium':
-        return <span className="badge badge-pill badge-warning p-2">{tag}</span>
+        return <span style={{backgroundColor: '#FFC107', padding: '5px', fontSize: '13px', color: '#000', borderRadius: '10px'}}>{tag}</span>
       case 'high':
-        return <span className="badge badge-pill badge-danger p-2">{tag}</span>
+        return <span style={{backgroundColor: '#DC3545', padding: '5px', fontSize: '13px', color: '#fff', borderRadius: '10px'}}>{tag}</span>
       default:
         return tag
     }
   }
 
-  render() {
-    return (
-      <div className="container">
-          <div className="row justify-content-center">
-            <TaskLayout tasks={this.props.task} addColorToTaskTag={this.addColorToTaskTag} deleteTask={this.props.deleteTask} />
-          </div>
-        </div>
-    )
-  }
+  render() { return <TaskLayout tasks={this.props.task} addColorToTaskTag={this.addColorToTaskTag} deleteTask={this.props.deleteTask} />}
 }
