@@ -4,7 +4,7 @@ import './App.css';
 
 //components
 import Navbar from './components/navbar/navbar';
-import Formz from './components/form/forms'
+import Form from './components/form/forms'
 //api
 import {task} from './db.json'
 
@@ -74,17 +74,15 @@ class App extends Component {
   render() {
     const { task } = this.state
     return (
-      <div>
+      <>
         <Navbar counter={this.state.task.length}/>
+        <Form onCustomOne={this.addTask} />
         <div className="container">
-          <div className="row justify-content-center">
-            <Formz onCustomOne={this.addTask} />
-          </div>
           <div className="row justify-content-center">
             { this.renderTasks(task) }
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }

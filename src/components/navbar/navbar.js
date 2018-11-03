@@ -1,14 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 import NavbarLayout from './navbarLayout'
 
-class Navbarr extends Component {
-  state = {
-    isOpen: false
-  }
+class Navbar extends React.Component { render() {return <NavbarLayout counter={this.props.counter}/>} }
 
-  toggle = () => this.setState({isOpen: !this.state.isOpen})
-
-  render() {return <NavbarLayout counter={this.props.counter} toggle={this.toggle} isOpen={this.state.isOpen}/>}
-}
-
-export default Navbarr
+export default Navbar
