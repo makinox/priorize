@@ -24,6 +24,14 @@ header nav a:hover {
   text-decoration: none;
 }
 
+header nav div:first-of-type a {
+  font-size: 20px;
+}
+
+header nav div:first-of-type a span {
+  font-size: 15px;
+}
+
 header nav span {
   color: #fff;
   background-color: #dc3545;
