@@ -2,7 +2,7 @@
 
 This is a web app maded with Pure react, pure css and love.
 
-Fell free to send a pull request or an issue.
+Fell free to send a pull request or an issue today.
 
 You can visit the app [here] (https://priorizex.firebaseapp.com/)
 
