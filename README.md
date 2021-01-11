@@ -1,8 +1,9 @@
-# Priorize
+# snake 🐍
 
-This is a web app maded with Pure react, pure css and love.
+Used:
 
-Fell free to send a pull request or an issue today.
+- Vanilla
 
-You can visit the app [here] (https://priorizex.firebaseapp.com/)
+Link to [snake!](https://snake.jesusbossa.dev/)
 
+![Image of snake](./src/images/preview.png)
