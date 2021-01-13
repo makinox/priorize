@@ -1,28 +1,48 @@
-import React from 'react'
-import FormLayout from './formLayout'
+import React, { useState } from 'react';
+import './formLayout.css';
 
-class Formz extends React.Component {
-  
-  state = {
+export default function Form({ onCustomOne }) {
+  const [form, useForm] = useState({
     title: '',
     responsible: '',
     description: '',
-    priority: 'low'
-  }
-  
-  handleInput = (e) => {
-    const { value, name } = e.target
-    this.setState({[name]: value})
+    priority: 'low',
+  });
+
+  function HandleInput(e) {
+    const { value, name } = e.target;
+    useForm((prev) => {
+      prev[name] = value;
+      return prev;
+    });
   }
 
-  handleSubmit = (e) => {
-    e.preventDefault()
-    this.props.onCustomOne(this.state)
+  function handleSubmit(e) {
+    e.preventDefault();
+    onCustomOne(form);
   }
 
-	render() {
-		return <FormLayout handleSubmit={this.handleSubmit} handleInput={this.handleInput} />
-	}
+  return (
+    <div className="formLayout-body">
+      <form onSubmit={handleSubmit}>
+        <div>
+          <input type="text" name="title" onChange={HandleInput} placeholder="Title" required />
+        </div>
+        <div>
+          <input type="text" name="responsible" onChange={HandleInput} placeholder="Responsable" required />
+        </div>
+        <div>
+          <input type="text" name="description" onChange={HandleInput} placeholder="Description" required />
+        </div>
+        <div>
+          <select name="priority" onChange={HandleInput}>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  );
 }
-
-export default Formz;

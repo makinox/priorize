@@ -1,6 +1,26 @@
-import React from 'react'
-import NavbarLayout from './navbarLayout'
+import React from 'react';
+import './navbarLayout.css';
 
-class Navbar extends React.Component { render() {return <NavbarLayout counter={this.props.counter}/>} }
-
-export default Navbar
+export default function navbar({ counter }) {
+  return (
+    <header>
+      <nav>
+        <div>
+          <a href="/">
+            Priorize <span>{counter}</span>
+          </a>
+        </div>
+        <div>
+          <a target="_blank" rel="noopener noreferrer" href="http://jesusbossa.com">
+            Me
+          </a>
+        </div>
+        <div>
+          <a target="_blank" rel="noopener noreferrer" href="https://github.com/makinox">
+            GitHub
+          </a>
+        </div>
+      </nav>
+    </header>
+  );
+}
