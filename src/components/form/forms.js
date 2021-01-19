@@ -19,7 +19,7 @@ export default function Form({ onCustomOne }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    onCustomOne(form);
+    onCustomOne(JSON.parse(JSON.stringify(form)));
   }
 
   return (

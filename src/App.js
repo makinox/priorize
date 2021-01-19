@@ -8,7 +8,9 @@ export default function App() {
   const [tasq, useTasq] = useState(task);
 
   function AddTask(taskit) {
-    useTasq((prev) => [...prev, taskit]);
+    useTasq((prev) => {
+      return [...prev, taskit];
+    });
   }
 
   function DeleteTask(taskit) {
