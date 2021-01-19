@@ -56,8 +56,8 @@ jobs:
       - name: Upload integration result
         uses: actions/upload-artifact@v2
         with:
-          name: dist
-          path: dist
+          name: build
+          path: build
   deploy:
     name: Deployment
     needs: [build]
@@ -71,7 +71,7 @@ jobs:
       - name: Download install result
         uses: actions/download-artifact@v2
         with:
-          name: dist
+          name: build
           path: build
 
       - name: Upload to production
