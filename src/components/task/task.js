@@ -9,7 +9,7 @@ export default function Task({ task, deleteTask }) {
       case 'medium':
         return <span style={{ backgroundColor: '#FFC107', padding: '5px', fontSize: '13px', color: '#000', borderRadius: '10px' }}>{tag}</span>;
       case 'high':
-        return <span style={{ backgroundColor: '#DC3545', padding: '5px', fontSize: '13px', color: '#fff', borderRadius: '10px' }}>{tag}</span>;
+        return <span style={{ backgroundColor: '#ff5050', padding: '5px', fontSize: '13px', color: '#fff', borderRadius: '10px' }}>{tag}</span>;
       default:
         return tag;
     }

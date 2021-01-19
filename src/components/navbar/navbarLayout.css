@@ -1,40 +1,51 @@
-header {
-  display: grid;
-  grid-auto-columns: minmax(auto, 1000px);
-  justify-content: center;
+nav {
+  box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.03);
+  background-color: #fff;
 }
 
-header nav {
-  display: grid;
-  grid-template-columns: minmax(auto, 800px) repeat(2, minmax(auto, .3fr));
-  padding: 10px 0;
-  grid-gap: 0 10px;
+nav section {
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1324px;
+  margin: 0px auto 30px auto;
+  display: flex;
+  width: auto;
 }
 
-header nav a {
-  display: inline;
-  color: rgba(0,0,0, .6);
-  transition: 0.3s ease;
-  cursor: pointer;
-  text-decoration: none;
+nav section div:first-of-type {
+  display: flex;
+  align-items: center;
 }
 
-header nav a:hover {
-  color: rgb(0,0,0);
-  text-decoration: none;
+nav section div:first-of-type img {
+  height: 70px;
 }
 
-header nav div:first-of-type a {
-  font-size: 20px;
+nav section div:first-of-type span {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 18px;
 }
 
-header nav div:first-of-type a span {
-  font-size: 15px;
-}
-
-header nav span {
-  color: #fff;
-  background-color: #dc3545;
-  padding: 0px 6px;
+nav section div:first-of-type span:last-of-type {
+  background-color: #ff5050;
   border-radius: 3px;
+  padding: 0px 6px;
+  color: #fff;
+}
+
+nav section div:last-of-type a {
+  text-decoration: none;
+}
+
+nav section div:last-of-type i {
+  transition: all 0.3s ease 0s;
+  color: #ff5050;
+  cursor: pointer;
+  font-size: 20px;
+  margin: 0 2px;
+}
+
+nav section div:last-of-type i:hover {
+  color: #ff9a9a;
 }
