@@ -53,33 +53,9 @@ jobs:
           name: cypress-videos
           path: cypress/videos
 
-      - name: Upload integration result
-        uses: actions/upload-artifact@v2
-        with:
-          name: build
-          path: build
-  deploy:
-    name: Deployment
-    needs: [build]
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [10.x]
-
-    steps:
-      - name: Download install result
-        uses: actions/download-artifact@v2
-        with:
-          name: build
-          path: build
-
       - name: Upload to production
         uses: w9jds/firebase-action@master
         with:
           args: deploy --only hosting
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-
-      - name: Finish
-        run: echo 'Finish'
