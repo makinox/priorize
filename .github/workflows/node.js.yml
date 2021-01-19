@@ -58,28 +58,28 @@ jobs:
         with:
           name: dist
           path: dist
-deploy:
-  name: Deployment
-  needs: [build]
-  runs-on: ubuntu-latest
+  deploy:
+    name: Deployment
+    needs: [build]
+    runs-on: ubuntu-latest
 
-  strategy:
-    matrix:
-      node-version: [10.x]
+    strategy:
+      matrix:
+        node-version: [10.x]
 
-  steps:
-    - name: Download install result
-      uses: actions/download-artifact@v2
-      with:
-        name: dist
-        path: build
+    steps:
+      - name: Download install result
+        uses: actions/download-artifact@v2
+        with:
+          name: dist
+          path: build
 
-    - name: Upload to production
-      uses: w9jds/firebase-action@master
-      with:
-        args: deploy --only hosting
-      env:
-        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - name: Upload to production
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 
-    - name: Finish
-      run: echo 'Finish'
+      - name: Finish
+        run: echo 'Finish'
